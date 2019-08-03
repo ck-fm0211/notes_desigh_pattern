@@ -1,0 +1,23 @@
+@startuml
+Interface Target {
+
+  target_method()
+}
+class Client {
+
+}
+class Adapter {
+
+  adaptee
+
+  target_method()
+}
+class Adaptee {
+
+  method()
+}
+
+Adapter -left-|> Target: extends >
+Adapter o-right-|> Adaptee
+Client -up-> Target: Uses >
+@enduml
