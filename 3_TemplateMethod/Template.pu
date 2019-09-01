@@ -1,0 +1,15 @@
+@startuml
+Interface AbstractClass {
+
+  method1()
+  method2()
+  templateMethod()
+}
+class ConcreteClass {
+
+  method1()
+  method2()
+}
+
+ConcreteClass -left-|> AbstractClass
+@enduml
