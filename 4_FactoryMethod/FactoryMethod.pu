@@ -1,0 +1,19 @@
+@startuml
+Interface Product {
+}
+class Factory {
+  factoryMethod()
+}
+class ConcreteFactory {
+  factoryMethod()
+}
+class ConcreteProduct {
+
+}
+
+Factory -right-> Product: Create >
+ConcreteFactory -up-|> Factory
+ConcreteProduct .up.|> Product
+ConcreteFactory -right-> ConcreteProduct: Create >
+
+@enduml
