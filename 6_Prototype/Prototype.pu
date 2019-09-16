@@ -1,0 +1,16 @@
+@startuml
+class User {
+}
+interface Prototype{
+
+  + create_clone()
+}
+class ConcretePrototype{
+
+  + create_clone()
+}
+
+User -right-> Prototype: Use >
+ConcretePrototype .up.|> Prototype
+
+@enduml
