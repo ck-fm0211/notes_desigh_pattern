@@ -1,0 +1,26 @@
+@startuml
+class Director {
+  builder
+
+  constract()
+}
+interface Builder{
+
+  build_pert()
+  get_result()
+}
+
+class SaltWaterBuilder{
+  build_pert()
+  get_result()
+}
+
+class Product{
+}
+
+
+Director o-right-> Builder
+SaltWaterBuilder .-up-|>Builder
+SaltWaterBuilder -right->Product
+
+@enduml

@@ -1,0 +1,47 @@
+@startuml
+class Director {
+  builder
+
+  constract()
+}
+interface Builder{
+
+  add_solute()
+  add_solvent()
+  abandon_solution()
+  get_result()
+}
+
+class SaltWaterBuilder{
+  salt_water
+
+  add_solute()
+  add_solvent()
+  abandon_solution()
+  get_result()
+}
+
+class SaltWater{
+  salt
+  water
+}
+class SugerWaterBuilder{
+  suger_water
+
+  add_solute()
+  add_solvent()
+  abandon_solution()
+  get_result()
+}
+class SugerWater{
+  suger
+  water
+}
+
+Director o-right-> Builder
+SaltWaterBuilder .-up-|>Builder
+SaltWaterBuilder o-right->SaltWater
+SugerWaterBuilder .-up-|>Builder
+SugerWaterBuilder o-right->SugerWater
+
+@enduml
