@@ -1,0 +1,42 @@
+@startuml
+class SampleClass{
+  main()
+}
+
+abstract class AbstractFactory{
+
+  get_soup()
+  get_main()
+  get_vegetables()
+  get_other_ingredients()
+}
+
+class ConcreteFactory{
+  get_soup()
+  get_main()
+  get_vegetables()
+  get_other_ingredients()
+}
+
+package AbstractProduct1 <<Rectangle>> #DDDDDD {
+}
+
+package AbstractProduct2 <<Rectangle>> #DDDDDD {
+}
+
+package ConcreteProduct1 <<Rectangle>> #FFFF00 {
+}
+
+package ConcreteProduct2 <<Rectangle>> #FFFF00 {
+}
+
+SampleClass -right-> AbstractFactory: use >
+AbstractFactory -down-> AbstractProduct1: create >
+AbstractFactory -down-> AbstractProduct2: create >
+ConcreteProduct1 -up-|> AbstractProduct1
+ConcreteProduct2 -up-|> AbstractProduct2
+ConcreteFactory -up-> ConcreteProduct1: create >
+ConcreteFactory -up-> ConcreteProduct2: create >
+ConcreteFactory -right-|> AbstractFactory
+
+@enduml
