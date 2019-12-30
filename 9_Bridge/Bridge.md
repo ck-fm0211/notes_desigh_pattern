@@ -115,4 +115,4 @@ class TimerSorter(metaclass=ABCMeta, Sorter):
 
 
 ## Builderパターンのまとめ
-![class_image2](./AbstractFactory.png)
+![class_image2](./Bridge.png)
