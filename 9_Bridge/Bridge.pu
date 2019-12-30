@@ -1,0 +1,28 @@
+@startuml
+class Abstraction{
+  implementor
+  operation()
+}
+
+class RefineAbstraction{
+
+}
+
+class Implementor{
+  operation_imple()
+}
+
+class ConcreteImplementorA{
+  operation_imple()
+}
+
+class ConcreteImplementorB{
+  operation_imple()
+}
+
+RefineAbstraction -up-|> Abstraction
+Abstraction o-right-> Implementor
+ConcreteImplementorA -up-|> Implementor
+ConcreteImplementorB -up-|> Implementor
+
+@enduml
