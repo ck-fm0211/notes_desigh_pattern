@@ -1,0 +1,22 @@
+@startuml
+abstract class Strategy{
+  strategy_method()
+}
+
+class Context{
+
+}
+
+class ConcreteStrategy{
+  strategy_method()
+}
+
+class ConcreteStrategy2{
+  strategy_method()
+}
+
+Context -left-> Strategy
+ConcreteStrategy -up-|> Strategy
+ConcreteStrategy2 -up-|> Strategy
+
+@enduml
