@@ -155,5 +155,5 @@ class SampleClass:
 ```
 
 
-## Builderパターンのまとめ
+## Strategyパターンのまとめ
 ![class_image2](./Strategy.png)
