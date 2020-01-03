@@ -1,0 +1,25 @@
+@startuml
+abstract class Component{
+  method1()
+  method2()
+}
+
+class Composite{
+  components
+
+  add()
+  method1()
+  method2()
+}
+
+class Leaf{
+  method1()
+  method2()
+}
+
+Composite -up-|> Component
+Leaf -up-|> Component
+Composite o--> Component
+
+
+@enduml
