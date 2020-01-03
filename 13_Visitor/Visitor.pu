@@ -1,0 +1,30 @@
+@startuml
+abstract class Visitor{
+  visit(Acceptor)
+  visit(ConcreteAcceptorA)
+  visit(ConcreteAcceptorB)
+}
+
+class ConcreteVisitor{
+  visit(Acceptor)
+  visit(ConcreteAcceptorA)
+  visit(ConcreteAcceptorB)
+}
+
+Interface Acceptor{
+  accept()
+}
+
+class ConcreteAcceptorA{
+  accept()
+}
+
+class ConcreteAcceptorB{
+  accept()
+}
+
+ConcreteVisitor -up-|> Visitor
+ConcreteAcceptorA -up-|> Acceptor
+ConcreteAcceptorB -up-|> Acceptor
+
+@enduml
