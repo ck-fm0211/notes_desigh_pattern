@@ -1,0 +1,23 @@
+@startuml
+abstract class Handler{
+  next
+  request()
+}
+
+class Client{
+}
+
+class ConcreteHandlerA{
+  request()
+}
+
+class ConcreteHandlerB{
+  request()
+}
+
+Handler o-right-> Handler
+Client -up-> Handler: Request >
+ConcreteHandlerA -left-|> Handler
+ConcreteHandlerB -left-|> Handler
+
+@enduml
