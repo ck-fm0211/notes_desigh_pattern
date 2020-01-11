@@ -1,0 +1,27 @@
+@startuml
+class Client{
+}
+
+class Facade{
+}
+
+class ClassA{
+}
+class ClassB{
+}
+class ClassC{
+}
+class ClassD{
+}
+
+Client -down-> Facade: Use >
+Facade -down-> ClassA
+Facade -down-> ClassB
+Facade -down-> ClassC
+Facade -down-> ClassD
+ClassA -down-> ClassC
+ClassB -down-> ClassD
+ClassC -right-> ClassD
+ClassD -left-> ClassC
+
+@enduml
