@@ -1,0 +1,30 @@
+@startuml
+Interface Mediator{
+
+  add_colleague(colleague: Colleague)
+  consultation(colleague1: Colleague, colleague2: Colleague)
+}
+
+class ConcreteMediator{
+  colleague: Dict
+  add_colleague(colleague: Colleague)
+  consultation(colleague1: Colleague, colleague2: Colleague)
+}
+
+Interface Colleague{
+  needs_active()
+  set_colleague(colleague: Colleague)
+}
+
+class ConcreteColleague{
+  mediator: Mediator
+  needs_active()
+  set_colleague(colleague: Colleague)
+}
+
+ConcreteMediator .up.|> Mediator
+ConcreteColleague .up.|> Colleague
+ConcreteMediator o-right-> ConcreteColleague
+ConcreteColleague o-left-> ConcreteMediator
+
+@enduml
