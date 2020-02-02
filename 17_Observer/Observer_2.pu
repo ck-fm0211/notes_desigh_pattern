@@ -1,0 +1,38 @@
+@startuml
+Interface Observer{
+
+  update()
+}
+
+Interface Subject{
+  observe_list
+
+  add_obsever(Obsever)
+  notify_observers()
+  edit()
+}
+
+class ConcreteObserver1{
+  update()
+}
+
+class ConcreteSubject1{
+  done()
+}
+
+class ConcreteObserver2{
+  update()
+}
+
+class ConcreteSubject2{
+  done()
+}
+
+
+Subject o-left-> Observer
+ConcreteObserver1 .up.|> Observer
+ConcreteObserver2 .up.|> Observer
+ConcreteSubject1 -up-|> Subject
+ConcreteSubject2 -up-|> Subject
+
+@enduml
