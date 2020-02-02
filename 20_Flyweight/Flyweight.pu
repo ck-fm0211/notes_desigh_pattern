@@ -1,0 +1,17 @@
+@startuml
+
+class Flyweight{
+}
+
+class FlyweightFactory{
+  dict
+  - singleton
+
+  - flyweight_factory()
+  + get_instance()
+  + get_flyweight()
+}
+
+FlyweightFactory o-left-> Flyweight
+
+@enduml
