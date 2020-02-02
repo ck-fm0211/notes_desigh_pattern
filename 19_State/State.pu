@@ -1,0 +1,28 @@
+@startuml
+
+Interface State{
+  method1()
+  method2()
+}
+
+class Context{
+  state
+  requestA()
+  requestB()
+}
+
+class ConcreteState1{
+  method1()
+  method2()
+}
+
+class ConcreteState2{
+  method1()
+  method2()
+}
+
+ConcreteState1 -up-|> State
+ConcreteState2 -up-|> State
+Context o-left-> State
+
+@enduml
