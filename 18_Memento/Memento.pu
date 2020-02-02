@@ -1,0 +1,20 @@
+@startuml
+
+class Memento{
+  params
+}
+
+class Originator{
+  params
+  create_memento()
+  set_memento(Memento)
+}
+
+class Carataker{
+  dict
+}
+
+Originator -left-> Memento: create >
+Carataker o-up-> Memento
+
+@enduml
