@@ -87,6 +87,27 @@ class MakeSaltWaterCommand(Command):
         self._beaker.note()
 
 
+class MakeSaltWaterAddSaltCommand(Command):
+    """濃度10%の食塩水100gを用意し、食塩を1gずつ加えていき、飽和濃度に達するには何gの食塩が必要か"""
+
+    def __init__(self):
+        super().__init__()
+        self._commands = []
+
+    def execute(self):
+        iter_commands = iter(self._commands)
+        command = next(iter_commands, None)
+        while command:
+            command.execute()
+            command = next(iter_commands, None)
+
+        print("食塩水を作り、それに食塩を1gずつ加えて飽和食塩水を作る実験")
+        self._beaker.note()
+
+    def add_command(self, command: Command):
+        self._commands.append(command)
+
+
 class Student:
     """実験する生徒"""
 
@@ -106,6 +127,19 @@ class Student:
 
         make_saltwater.execute()  # 10%の食塩水100gを作る実験
 
+        make_saltwater2 = MakeSaltWaterCommand()
+        add_salt2 = AddSaltCommand()
+        make_saltwater_add_salt = MakeSaltWaterAddSaltCommand()
+
+        beaker = Beaker(90, 10)
+        make_saltwater2.set_beaker(beaker)
+        add_salt2.set_beaker(beaker)
+        make_saltwater_add_salt.set_beaker(beaker)
+
+        make_saltwater_add_salt.add_command(make_saltwater2)
+        make_saltwater_add_salt.add_command(add_salt2)
+
+        make_saltwater_add_salt.execute()
 
 if __name__ == '__main__':
     s = Student()
